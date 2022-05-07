@@ -1,0 +1,12 @@
+- name: Adding storpool repository
+  include_tasks: "add-repo-{{ ansible_os_family | lower }}.yml"
+
+- name: Installing StorPool Python packages
+  become: yes
+  ansible.builtin.package:
+    name:
+      - sp-python2
+      - sp-python2-modules
+      - sp-python3
+      - sp-python3-modules
+    state: present

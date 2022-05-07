@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Kaloyan Kotlarski
+  namespace: storpool
+  description: Installs StorPools' version of Python2 and Python3
+  company: StorPool Storage AD
+  license: Apache-2.0
+  min_ansible_version: 2.10
+  platforms:
+    - name: EL
+      versions:
+        - 7
+        - 8
+
+  galaxy_tags: []
+dependencies: []
