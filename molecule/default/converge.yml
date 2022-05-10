@@ -2,6 +2,6 @@
 - name: Converge
   hosts: all
   tasks:
-    - name: "Include storpool.install_sp_python"
+    - name: Including storpool.install_sp_python
       include_role:
         name: "storpool.install_sp_python"

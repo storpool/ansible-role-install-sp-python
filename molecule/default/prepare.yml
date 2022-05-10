@@ -1,0 +1,16 @@
+- name: Installing python3 on ubuntu hosts
+  gather_facts: false
+  hosts: ubuntu
+  tasks:
+    - name: Install python3
+      raw: apt-get update && apt-get install -y python3
+      changed_when: false
+      failed_when: false
+
+- name: Installing sudo on all hosts
+  hosts: all
+  tasks:
+    - name: Installing sudo
+      package:
+        name: sudo
+        state: present
