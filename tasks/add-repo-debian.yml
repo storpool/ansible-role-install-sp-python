@@ -1,11 +1,3 @@
-- name: Updating ca-certificates package
-  become: yes
-  ansible.builtin.apt:
-    name:
-      - ca-certificates
-    state: latest
-    update_cache: yes
-
 - name: Downloading gpg keyring
   become: yes
   ansible.builtin.get_url:
@@ -16,6 +8,6 @@
 - name: Adding StorPool APT repositories
   become: yes
   ansible.builtin.apt_repository:
-    repo: "deb deb-src [signed-by=/usr/share/keyrings/storpool-keyring.gpg] https://repo.storpool.com/public/{{ item.url_path }}/ubuntu/ {{ ansible_distribution_release }} main"
+    repo: "deb [signed-by=/usr/share/keyrings/storpool-keyring.gpg] https://repo.storpool.com/public/{{ item.url_path }}/ubuntu/ {{ ansible_distribution_release }} main"
     filename: "{{ item.filename }}"
   loop: "{{ storpool_repositories }}"
