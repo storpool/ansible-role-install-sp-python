@@ -1,6 +1,7 @@
 galaxy_info:
   author: Kaloyan Kotlarski
   namespace: storpool
+  role_name: install_sp_python
   description: Installs StorPools' version of Python2 and Python3
   company: StorPool Storage AD
   license: Apache-2.0
@@ -10,6 +11,11 @@ galaxy_info:
       versions:
         - 7
         - 8
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
+        - jammy
 
   galaxy_tags: []
 dependencies: []
