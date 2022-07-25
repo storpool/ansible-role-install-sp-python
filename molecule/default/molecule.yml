@@ -14,11 +14,19 @@ platforms:
     pre_build_image: true
     groups:
       - ubuntu
+  - name: ubuntu_2204
+    image: ubuntu:22.04
+    pre_build_image: true
+    groups:
+      - ubuntu
   - name: centos_7
     image: centos:7
     pre_build_image: true
   - name: alma_8
     image: almalinux:8
+    pre_build_image: true
+  - name: rocky_8
+    image: rockylinux:8
     pre_build_image: true
 provisioner:
   name: ansible
