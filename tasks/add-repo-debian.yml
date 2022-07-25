@@ -7,7 +7,12 @@
 
 - name: Adding StorPool APT repositories
   become: yes
-  ansible.builtin.apt_repository:
-    repo: "deb [signed-by=/usr/share/keyrings/storpool-keyring.gpg] https://repo.storpool.com/public/{{ item.url_path }}/ubuntu/ {{ ansible_distribution_release }} main"
-    filename: "{{ item.filename }}"
+  ansible.builtin.template:
+    dest: "/etc/apt/sources.list.d/{{ item.filename }}.sources"
+    src: apt-sources.j2
   loop: "{{ storpool_repositories }}"
+
+- name: Updating APT cache
+  become: yes
+  ansible.builtin.apt:
+    update_cache: yes
