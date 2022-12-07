@@ -23,4 +23,5 @@
       - sp-python2-modules
       - sp-python3
       - sp-python3-modules
-    state: present
+    state: latest
+
